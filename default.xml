@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <default revision="master" sync-j="4"/>
+
+  <remote name="pxm-github" fetch="git://github.com/pixmeter"/>
+
+  <!-- Pixmeter opensource  projects -->
+
+  <project name="pxm-bsp-base" path="sources/base" remote="pxm-github">
+        <copyfile dest="README" src="README"/>
+        <copyfile dest="setup-environment" src="setup-environment"/>
+  </project>
+  <project name="plos" path="sources/plos" remote="pxm-github"/>
+  <project name="pxm-bsp-documentation" path="documentation" remote="pxm-github"/>
+
+  <!-- Open source collaboration projects adapted by Pixmeter for contribution -->
+
+  <!-- Open source collaboration projects -->
+
+  <remote name="yocto" fetch="git://git.yoctoproject.org"/>
+  <project name="poky" path="sources/poky" remote="yocto" />
+
+  <remote fetch="git://github.com/Freescale" name="freescale" />
+  <project remote="freescale" name="meta-fsl-arm" path="sources/meta-fsl-arm"/>
+  <project remote="freescale" name="meta-fsl-arm-extra" path="sources/meta-fsl-arm-extra"/>
+
+  <remote fetch="git://git.openembedded.org" name="oe" />
+  <project remote="oe" name="meta-openembedded" path="sources/meta-openembedded"/>
+
+  <remote fetch="git://github.com/OSSystems" name="OSSystems"/>
+  <project remote="OSSystems" name="meta-browser" path="sources/meta-browser" />
+
+  <remote name="embest-tech-github" fetch="git://github.com/embest-tech/" />
+  <!--
+  <project remote="embest-tech-github" revision="embest_dora" name="meta-fsl-arm-extra"
+           path="sources/meta-fsl-arm-extra"/> 
+  -->
+
+</manifest>
