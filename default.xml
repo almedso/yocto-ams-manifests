@@ -35,10 +35,4 @@
   <remote fetch="https://github.com/imyller" name="nodejs"/>
   <project remote="nodejs" name="meta-nodejs" path="sources/meta-nodejs" />
 
-  <!--
-  <remote name="embest-tech-github" fetch="git://github.com/embest-tech/" />
-  <project remote="embest-tech-github" revision="embest_dora" name="meta-fsl-arm-extra"
-           path="sources/meta-fsl-arm-extra"/> 
-  -->
-
 </manifest>
