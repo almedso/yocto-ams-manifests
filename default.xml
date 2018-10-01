@@ -31,6 +31,7 @@
 
   <!-- Hardware specific -->
   <project remote="yocto" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
+  <project remote="freescale" name="meta-freescale" path="sources/meta-freescale"/>
   <project remote="freescale" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
   <project remote="freescale" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
 
