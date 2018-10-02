@@ -26,17 +26,17 @@
   <!-- Open source collaboration projects -->
 
   <!-- Yocto Core --> 
-  <project name="poky" path="sources/poky" remote="yocto" />
-  <project remote="oe" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project name="poky" revision="sumo" remote="yocto" path="sources/poky"/>
+  <project name="meta-openembedded" revision="sumo" remote="oe" path="sources/meta-openembedded"/>
 
   <!-- Hardware specific -->
-  <project remote="yocto" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
-  <project remote="freescale" name="meta-freescale" path="sources/meta-freescale"/>
-  <project remote="freescale" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
-  <project remote="freescale" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
+  <project name="meta-raspberrypi" revision="sumo" remote="yocto" path="sources/meta-raspberrypi"/>
+  <project name="meta-freescale" revision="sumo" remote="freescale" path="sources/meta-freescale"/>
+  <project name="meta-freescale-3rdparty" revision="sumo" remote="freescale" path="sources/meta-freescale-3rdparty"/>
+  <project name="meta-freescale-distro" revision="sumo" remote="freescale" path="sources/meta-freescale-distro"/>
 
   <!-- Application specific -->
-  <project remote="os-systems" name="meta-browser" path="sources/meta-browser" />
-  <project remote="nodejs" name="meta-nodejs" path="sources/meta-nodejs" />
+  <project name="meta-browser" remote="os-systems" path="sources/meta-browser" />
+  <project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" />
 
 </manifest>
