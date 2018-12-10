@@ -26,14 +26,14 @@
   <!-- Open source collaboration projects -->
 
   <!-- Yocto Core --> 
-  <project name="poky" revision="sumo" remote="yocto" path="sources/poky"/>
-  <project name="meta-openembedded" revision="sumo" remote="oe" path="sources/meta-openembedded"/>
+  <project name="poky" revision="thud" remote="yocto" path="sources/poky"/>
+  <project name="meta-openembedded" revision="thud" remote="oe" path="sources/meta-openembedded"/>
 
   <!-- Hardware specific -->
-  <project name="meta-raspberrypi" revision="sumo" remote="yocto" path="sources/meta-raspberrypi"/>
-  <project name="meta-freescale" revision="sumo" remote="freescale" path="sources/meta-freescale"/>
-  <project name="meta-freescale-3rdparty" revision="sumo" remote="freescale" path="sources/meta-freescale-3rdparty"/>
-  <project name="meta-freescale-distro" revision="sumo" remote="freescale" path="sources/meta-freescale-distro"/>
+  <project name="meta-raspberrypi" revision="thud" remote="yocto" path="sources/meta-raspberrypi"/>
+  <project name="meta-freescale" revision="thud" remote="freescale" path="sources/meta-freescale"/>
+  <project name="meta-freescale-3rdparty" revision="thud" remote="freescale" path="sources/meta-freescale-3rdparty"/>
+  <project name="meta-freescale-distro" revision="thud" remote="freescale" path="sources/meta-freescale-distro"/>
 
   <!-- Application specific -->
   <project name="meta-browser" remote="os-systems" path="sources/meta-browser" />
