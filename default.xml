@@ -11,6 +11,16 @@
   <remote name="os-systems" fetch="git://github.com/OSSystems"/>
   <remote name="yocto" fetch="git://git.yoctoproject.org"/>
 
+  <remote name="qt5" fetch="https://github.com/meta-qt5"/>
+  <remote name="linaro" fetch="git://git.linaro.org/openembedded"/>
+  <remote name="openamp" fetch="https://github.com/OpenAMP"/>
+  <remote name="arago" fetch="git://arago-project.org/git"/>
+  <remote name="arago-projects" fetch="git://arago-project.org/git/projects"/>
+
+  <remote name="phytec" fetch="https://stash.phytec.com/scm/pub"/>
+  <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
+
+
   <!-- almedso opensource projects -->
 
   <project name="yocto-bsp-base" path="sources/base" remote="ams">
@@ -38,5 +48,16 @@
   <!-- Application specific -->
   <project name="meta-browser" remote="os-systems" path="sources/meta-browser" />
   <project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" />
+
+  <!-- other most often BSP related -->
+  <project name="meta-ti" remote="yocto" revision="thud" path="sources/meta-ti"/>
+  <project name="meta-linaro"  remote="linaro" revision="thud" path="sources/meta-linaro"/>
+  <project name="meta-processor-sdk" remote="arago-projects" revision="master" path="sources/meta-processor-sdk"/>
+  <project name="meta-arago" remote="arago" revision="thud" path="sources/meta-arago"/>
+  <project name="meta-openamp" remote="openamp" revision="thud" path="sources/meta-openamp"/>
+
+  <project name="meta-phytec" remote="phytec" revision="morty" path="sources/meta-phytec"/>
+  <project name="meta-phytec-extra" remote="phytec" revision="morty" path="sources/meta-phytec-extra"/>
+
 
 </manifest>
