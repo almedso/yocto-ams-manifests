@@ -53,8 +53,8 @@
   <project name="meta-ti" remote="yocto" revision="thud" path="sources/meta-ti"/>
   <project name="meta-linaro"  remote="linaro" revision="thud" path="sources/meta-linaro"/>
   <project name="meta-processor-sdk" remote="arago-projects" revision="master" path="sources/meta-processor-sdk"/>
-  <project name="meta-arago" remote="arago" revision="thud" path="sources/meta-arago"/>
-  <project name="meta-openamp" remote="openamp" revision="thud" path="sources/meta-openamp"/>
+  <project name="meta-arago" remote="arago" revision="master" path="sources/meta-arago"/>
+  <project name="meta-openamp" remote="openamp" revision="master" path="sources/meta-openamp"/>
 
   <project name="meta-phytec" remote="phytec" revision="morty" path="sources/meta-phytec"/>
   <project name="meta-phytec-extra" remote="phytec" revision="morty" path="sources/meta-phytec-extra"/>
