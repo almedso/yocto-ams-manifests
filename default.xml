@@ -20,14 +20,11 @@
   <remote name="phytec" fetch="https://stash.phytec.com/scm/pub"/>
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
 
-
   <!-- almedso opensource projects -->
-
-  <project name="yocto-bsp-base" path="sources/base" remote="ams">
+  <project name="yocto-ams" revision="feature/ci" path="sources/ams" remote="ams">
         <copyfile dest="README.md" src="README.md"/>
         <copyfile dest="setup-environment" src="setup-environment"/>
-  </project>
-  <project name="yocto-ams" path="sources/ams" remote="ams"/>
+  </project> 
   <project name="yocto-bsp-documentation" path="documentation" remote="ams"/>
 
   <!-- Open source collaboration projects adapted by almedso for contribution -->
