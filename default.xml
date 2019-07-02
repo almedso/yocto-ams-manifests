@@ -23,7 +23,7 @@
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="feature/ci" path="sources/ams" remote="ams">
         <copyfile dest="README.md" src="README.md"/>
-        <copyfile dest="setup-environment" src="setup-environment"/>
+        <copyfile dest="init-environment" src="scripts/init-environment"/>
   </project> 
   <project name="yocto-bsp-documentation" path="documentation" remote="ams"/>
 
