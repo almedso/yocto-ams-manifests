@@ -178,7 +178,7 @@ in conf/local.conf *distro* and *machine* are already pre-configured
 rm -rf build  # in case it exists
 
 # pick defaults source for local.conf and bblayers.conf and initialize the environment
-TEMPLATECONF=$(pwd)/sources/ams/meta-ams/conf source sources/poky/oe-init-build-env build # creates build directory
+TEMPLATECONF=$(pwd)/sources/ams/conf source sources/poky/oe-init-build-env build # creates build directory
 
 
 # (in build dir) create site.conf with global stuff that is sourced before local.conf
