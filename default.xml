@@ -4,6 +4,7 @@
   <!-- Clarify which is the release upstream repositories refer to -->
   <default revision="master" sync-j="4"/>
 
+  <!-- Remote references to repositories - potentially more than needed -->
   <remote name="ams" fetch="git://github.com/almedso"/>
   <remote name="freescale" fetch="git://github.com/Freescale"/>
 
@@ -22,9 +23,8 @@
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
 
   <!-- almedso opensource projects -->
-  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
-        <copyfile dest="README.md" src="README.md"/>
-        <copyfile dest="init-environment" src="scripts/init-environment"/>
+  <project name="yocto-ams" revision="feature/ci" path="sources/ams" remote="ams">
+    <copyfile dest="README.md" src="README.md"/>
   </project> 
   <project name="yocto-bsp-documentation" revision="master" path="documentation" remote="ams"/>
 
@@ -54,8 +54,5 @@
   <project name="meta-processor-sdk" remote="arago-projects" path="sources/meta-processor-sdk"/>
   <project name="meta-arago" remote="arago" path="sources/meta-arago"/>
   <project name="meta-openamp" remote="openamp" path="sources/meta-openamp"/>
-
-  <project name="meta-phytec" remote="phytec" path="sources/meta-phytec"/>
-  <project name="meta-phytec-extra" remote="phytec" path="sources/meta-phytec-extra"/>
 
 </manifest>
