@@ -23,7 +23,7 @@
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
 
   <!-- almedso opensource projects -->
-  <project name="yocto-ams" revision="feature/ci" path="sources/ams" remote="ams">
+  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
     <copyfile dest="README.md" src="README.md"/>
   </project> 
   <project name="yocto-bsp-documentation" revision="master" path="documentation" remote="ams"/>
