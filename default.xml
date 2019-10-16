@@ -14,12 +14,7 @@
   <remote name="yocto" fetch="git://git.yoctoproject.org"/>
 
   <remote name="qt5" fetch="https://github.com/meta-qt5"/>
-  <remote name="linaro" fetch="git://git.linaro.org/openembedded"/>
-  <remote name="openamp" fetch="https://github.com/OpenAMP"/>
-  <remote name="arago" fetch="git://arago-project.org/git"/>
-  <remote name="arago-projects" fetch="git://arago-project.org/git/projects"/>
 
-  <remote name="phytec" fetch="https://stash.phytec.com/scm/pub"/>
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
 
   <!-- almedso opensource projects -->
@@ -48,11 +43,5 @@
   <project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" />
   <project name="meta-qt5" remote="qt5" path="sources/meta-qt5"/>
 
-  <!-- other most often BSP related -->
-  <project name="meta-ti" remote="yocto" path="sources/meta-ti"/>
-  <project name="meta-linaro"  remote="linaro" path="sources/meta-linaro"/>
-  <project name="meta-processor-sdk" remote="arago-projects" path="sources/meta-processor-sdk"/>
-  <project name="meta-arago" remote="arago" path="sources/meta-arago"/>
-  <project name="meta-openamp" remote="openamp" path="sources/meta-openamp"/>
 
 </manifest>
