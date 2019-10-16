@@ -2,7 +2,7 @@
 <manifest>
 
   <!-- Clarify which is the release upstream repositories refer to -->
-  <default revision="master" sync-j="4"/>
+  <default revision="warrior" sync-j="4"/>
 
   <!-- Remote references to repositories - potentially more than needed -->
   <remote name="ams" fetch="git://github.com/almedso"/>
@@ -18,7 +18,7 @@
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
 
   <!-- almedso opensource projects -->
-  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
+  <project name="yocto-ams" revision="warrior" path="sources/ams" remote="ams">
     <copyfile dest="README.md" src="README.md"/>
   </project>
   <project name="yocto-bsp-documentation" revision="master" path="documentation" remote="ams"/>
@@ -40,8 +40,8 @@
 
   <!-- Application specific -->
   <project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/>
-  <project name="meta-browser" remote="os-systems" path="sources/meta-browser" />
-  <project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" />
+  <project name="meta-browser" revision="master" remote="os-systems" path="sources/meta-browser" />
+  <project name="meta-nodejs" revision="master" remote="nodejs" path="sources/meta-nodejs" />
   <project name="meta-qt5" remote="qt5" path="sources/meta-qt5"/>
 
 
