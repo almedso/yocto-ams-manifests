@@ -20,7 +20,7 @@
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
     <copyfile dest="README.md" src="README.md"/>
-  </project> 
+  </project>
   <project name="yocto-bsp-documentation" revision="master" path="documentation" remote="ams"/>
 
   <!-- Open source collaboration projects adapted by almedso for contribution -->
@@ -28,7 +28,7 @@
 
   <!-- Open source collaboration projects -->
 
-  <!-- Yocto Core --> 
+  <!-- Yocto Core -->
   <project name="poky" remote="yocto" path="sources/poky"/>
   <project name="meta-openembedded" remote="oe" path="sources/meta-openembedded"/>
 
@@ -39,6 +39,7 @@
   <project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/>
 
   <!-- Application specific -->
+  <project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/>
   <project name="meta-browser" remote="os-systems" path="sources/meta-browser" />
   <project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" />
   <project name="meta-qt5" remote="qt5" path="sources/meta-qt5"/>
