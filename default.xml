@@ -13,6 +13,8 @@
   <remote name="os-systems" fetch="git://github.com/OSSystems"/>
   <remote name="yocto" fetch="git://git.yoctoproject.org"/>
 
+  <remote name="rust" fetch="git://github.com/rust-embedded"/>
+
   <remote name="qt5" fetch="https://github.com/meta-qt5"/>
 
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
@@ -43,6 +45,7 @@
   <project name="meta-browser" revision="master" remote="os-systems" path="sources/meta-browser" />
   <project name="meta-nodejs" revision="master" remote="nodejs" path="sources/meta-nodejs" />
   <project name="meta-qt5" remote="qt5" path="sources/meta-qt5"/>
+  <project name="meta-rust-bin" revision="master" remote="rust" path="sources/meta-rust-bin"/>
 
 
 </manifest>
