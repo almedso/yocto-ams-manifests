@@ -2,7 +2,7 @@
 <manifest>
 
   <!-- Clarify which is the release upstream repositories refer to -->
-  <default revision="warrior" sync-j="4"/>
+  <default revision="zeus" sync-j="4"/>
 
   <!-- Remote references to repositories - potentially more than needed -->
   <remote name="ams" fetch="git://github.com/almedso"/>
@@ -20,7 +20,7 @@
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
 
   <!-- almedso opensource projects -->
-  <project name="yocto-ams" revision="warrior-next" path="sources/ams" remote="ams">
+  <project name="yocto-ams" revision="zeus-next" path="sources/ams" remote="ams">
     <copyfile dest="README.md" src="README.md"/>
   </project>
   <project name="yocto-bsp-documentation" revision="master" path="documentation" remote="ams"/>
