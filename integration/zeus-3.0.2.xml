@@ -20,7 +20,7 @@
   </project>
 
   <!-- Yocto Core -->
-  <project name="poky" revision="yocto-3.0.2" path="sources/poky" remote="yocto"/>
+  <project name="poky" revision="refs/tags/yocto-3.0.2" path="sources/poky" remote="yocto"/>
   <project name="meta-openembedded" revision="zeus" path="sources/meta-openembedded" remote="oe"/>
 
   <!-- Hardware specific -->
@@ -32,9 +32,7 @@
   <!-- Middleware and application specific -->
   <project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto"/>
   <project name="meta-browser" revision="master" path="sources/meta-browser" remote="os-systems" />
-  <!-- Hardcode the SHA1 for meta-qt5 Qt 5.14, because code.qt.io is a moving
-       target and "unstable" (in the Debian sense of the word) -->
-  <project name="meta-qt5" revision="9ff0a36249205d36bb44cc34a26cb6201180a89f" path="sources/meta-qt5" remote="qt5"/>
+  <project name="meta-qt5" revision="refs/tags/v5.14.0" path="sources/meta-qt5" remote="qt5"/>
   <project name="meta-rust-bin" revision="master" path="sources/meta-rust-bin" remote="rust"/>
 
 </manifest>
