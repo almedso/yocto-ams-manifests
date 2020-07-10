@@ -22,6 +22,7 @@
   <!-- Yocto Core -->
   <project name="poky" path="sources/poky" remote="yocto"/>
   <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe"/>
+  <project name="openembedded-core" path="sources/openembedded-core" remote="oe"/>
 
   <!-- Hardware specific -->
   <project name="meta-raspberrypi" path="sources/meta-raspberrypi" remote="yocto"/>
