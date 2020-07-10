@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Clarify which is the release upstream repositories refer to -->
+  <default revision="dunfell" sync-j="4"/>
+
+  <!-- Remote references to repositories - potentially more than needed -->
+  <remote name="ams" fetch="git://github.com/almedso"/>
+  <remote name="freescale" fetch="git://github.com/Freescale"/>
+  <remote name="oe" fetch="git://git.openembedded.org"/>
+  <remote name="os-systems" fetch="git://github.com/OSSystems"/>
+  <remote name="yocto" fetch="git://git.yoctoproject.org"/>
+  <remote name="rust" fetch="git://github.com/rust-embedded"/>
+  <remote name="qt5" fetch="https://code.qt.io/yocto"/>
+  <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
+
+  <!-- almedso opensource projects -->
+  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
+    <copyfile dest="README.md" src="README.md"/>
+  </project>
+
+  <!-- Yocto Core -->
+  <project name="poky" path="sources/poky" remote="yocto"/>
+  <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe"/>
+
+  <!-- Hardware specific -->
+  <project name="meta-raspberrypi" path="sources/meta-raspberrypi" remote="yocto"/>
+  <project name="meta-freescale" path="sources/meta-freescale" remote="freescale"/>
+  <project name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty" remote="freescale"/>
+  <project name="meta-freescale-distro" path="sources/meta-freescale-distro" remote="freescale"/>
+
+  <!-- Middleware and application specific -->
+  <project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto"/>
+  <project name="meta-browser" revision="master" path="sources/meta-browser" remote="os-systems" />
+  <project name="meta-qt5" revision="refs/tags/v5.15.0" path="sources/meta-qt5" remote="qt5"/>
+  <project name="meta-rust-bin" revision="master" path="sources/meta-rust-bin" remote="rust"/>
+
+</manifest>
