@@ -14,6 +14,7 @@
   <remote name="qt5" fetch="https://code.qt.io/yocto"/>
   <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
   <remote name="jupyter" fetch="git://github.com/Xilinx"/>
+  <remote name="scipy" fetch="git://github.com/gpanders"/>
 
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
@@ -38,5 +39,6 @@
   <project name="meta-qt6" revision="refs/tags/v6.0.0" path="sources/meta-qt6" remote="qt5"/>
   <project name="meta-rust-bin" revision="master" path="sources/meta-rust-bin" remote="rust"/>
   <project name="meta-jupyter" revision="master" path="sources/meta-jupyter" remote="jupyter"/>
+  <project name="meta-scipy" revision="master" path="sources/meta-scipy" remote="scipy"/>
 
 </manifest>
