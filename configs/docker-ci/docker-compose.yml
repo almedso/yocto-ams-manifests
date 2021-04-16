@@ -1,0 +1,23 @@
+# this composes a html publishing service for yocto images and package feeds
+version: "3"
+services:
+  my-yocto-builder:
+    image: my-yocto-bitbaker:latest
+    # image: ubuntu:20.04
+
+    # -- do this with exec  --
+    # user: "${UID}:${GID}"
+    # stdin_open: true # docker run -i
+    # tty: true        # docker run -t
+    # 
+    entrypoint: /bin/bash -c "while true; do  sleep 1; done"
+
+    volumes:
+      # Project home dir is mandatory
+      - .:/yocto/root
+      - ../cache:/yocto/cache
+      - publish:/yocto/publish
+      # ssh needs to be injected if private source is to be pulled
+      - ${HOME}/.ssh:/home/yocto/.ssh
+volumes:
+  publish: {}

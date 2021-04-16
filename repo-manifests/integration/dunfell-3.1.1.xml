@@ -22,9 +22,9 @@
   </project>
 
   <!-- Yocto Core -->
-  <project name="poky" path="sources/poky" remote="yocto"/>
-  <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe"/>
-  <project name="openembedded-core" path="sources/openembedded-core" remote="oe"/>
+  <project name="poky" revision="refs/tags/yocto-3.1.1" path="sources/poky" remote="yocto"/>
+  <project name="meta-openembedded" revision="dunfell" path="sources/meta-openembedded" remote="oe"/>
+  <project name="openembedded-core" revision="dunfell" path="sources/openembedded-core" remote="oe"/>
 
   <!-- Hardware specific -->
   <project name="meta-raspberrypi" path="sources/meta-raspberrypi" remote="yocto"/>
@@ -35,10 +35,9 @@
   <!-- Middleware and application specific -->
   <project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto"/>
   <project name="meta-browser" revision="master" path="sources/meta-browser" remote="os-systems" />
-  <project name="meta-qt5" revision="refs/tags/v5.15.2" path="sources/meta-qt5" remote="qt5"/>
-  <project name="meta-qt6" revision="refs/tags/v6.0.0" path="sources/meta-qt6" remote="qt5"/>
+  <project name="meta-qt5" revision="refs/tags/v5.15.0" path="sources/meta-qt5" remote="qt5"/>
   <project name="meta-rust-bin" revision="master" path="sources/meta-rust-bin" remote="rust"/>
   <project name="meta-jupyter" revision="master" path="sources/meta-jupyter" remote="jupyter"/>
-  <project name="meta-scipy" revision="master" path="sources/meta-scipy" remote="scipy"/>
+  <project name="meta-scipy" path="sources/meta-scipy" remote="scipy"/>
 
 </manifest>

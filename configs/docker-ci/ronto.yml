@@ -1,0 +1,20 @@
+# see docu at https://ronto.readthedocs.io/
+defaults:
+  TARGETS: targets
+repo:
+  url: git@github.com:almedso/repo-yocto.git
+  # manifest: integration/dunfell-3.1.1.xml
+
+build:
+  init_script: sources/ams/scripts/ams-init-build-env
+  template_dir: sources/ams/conf
+  # targets_file: sources/ams/conf/{{ TARGETS }}.yml
+  # fall back target
+  targets:
+    - image: ams-image-dev
+      machine: ricardo
+
+publish:
+  webserver_host_dir: /yocto/publish
+
+# docker:
