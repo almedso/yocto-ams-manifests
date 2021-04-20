@@ -1,3 +1,6 @@
 sources/*
 build/*
 .repo/*
+docker-compose.yml
+site.conf
+ronto.yml
