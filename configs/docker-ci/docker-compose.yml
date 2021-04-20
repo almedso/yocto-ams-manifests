@@ -3,21 +3,25 @@ version: "3"
 services:
   my-yocto-builder:
     image: my-yocto-bitbaker:latest
-    # image: ubuntu:20.04
 
-    # -- do this with exec  --
-    # user: "${UID}:${GID}"
-    # stdin_open: true # docker run -i
-    # tty: true        # docker run -t
-    # 
-    entrypoint: /bin/bash -c "while true; do  sleep 1; done"
+    # run infinitely and do nothing
+    command: /bin/bash -c "while true; do  sleep 1; done"
+    # note: entrypoint is an alternative to command directive.
+    # however it would bypass sanity checks (implemented in containers
+    # entrypoint)
 
     volumes:
       # Project home dir is mandatory
       - .:/yocto/root
-      - ../cache:/yocto/cache
-      - publish:/yocto/publish
-      # ssh needs to be injected if private source is to be pulled
+      # "ams" typical local setting
+      - cache:/yocto/cache
+      # ssh needs to be injected if ssh accessible source is to be pulled
       - ${HOME}/.ssh:/home/yocto/.ssh
+      # publish as well
+      - publish:/yocto/publish
+
 volumes:
-  publish: {}
+  publish:
+    external: true
+  cache:
+    external: true

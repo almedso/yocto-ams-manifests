@@ -1,11 +1,14 @@
-# almedso Yocto based Linux applications (ams)
+# Build Context Configuration - DOCKER HEADLESS CI
 
-ams is an integration of various components to form a complete prepackaged
-build system and development environment derived from Poky.
+Headless build is integrated as follow:
 
-iot image(s) are by intention simulating iot devices that are characterized by
+* dedicated build containers
+* shared external publish and cache volumes
+* project home is this folder
+* ronto is used to build
+* publishing is configured (images and packages)
 
-* no display, no keyboard, no pointing device
-* ip network support
-* nodejs eco system
-* python eco system
+## External requirements:
+
+* exterenal volumes *cache* and *download* exist *all users* have rw access
+* publishing folder is picked up from nginx publisher
