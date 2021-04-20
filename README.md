@@ -1,11 +1,17 @@
+
+# almedso Yocto based Linux applications (ams) - Build Control
+
+
 ## General
 
 This repository contains configuration to build **ams yocto project**.
 
+**ams** is an integration of various components to form a complete prepackaged
+build system and development environment derived from Poky.
+
 A **yocto project** is considered here as all configuration, specifications and
 procedures to build deploy-able linux images and packages for a group of
 applications and hardware devices using Yocto.
-
 
 This repository contains *manifest files* to pull more configuration and
 specification sources (yocto layers and recipes) via google repo tool
@@ -29,6 +35,7 @@ Yocto ams distribution
 │   ├── experimental
 │   └── integration
 └── scripts
+    ├── select-config.sh
     └── privatized-docker-image
 ```
 
@@ -86,6 +93,18 @@ It s available via `pip3 install -U ronto` and documentation at
 https://ronto.readthedocs.io.
 
 ronto cli is self-explaining via `ronto --help`
+
+
+### Provided scripts
+
+Are located in *scripts* folder. They shall be called from project root (this)
+directory. Scripts always support a `--help` to see how to use.
+
+**select-config.sh**
+
+   Is used to switch from build context environment (docker/bare-metal,dev/ci)
+   to another.
+
 
 ## Usage
 
