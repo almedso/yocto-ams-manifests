@@ -25,6 +25,11 @@ RUN echo "[user]"                   > /home/yocto/.gitconfig && \
 	echo "    name = $USER_NAME" >> /home/yocto/.gitconfig && \
 	echo "	  email = $USER_EMAIL" >> /home/yocto/.gitconfig && \
 	echo "[color]" >> /home/yocto/.gitconfig && \
-	echo "	  ui = auto" >> /home/yocto/.gitconfig
+	echo "	  ui = auto" >> /home/yocto/.gitconfig && \
+	chown yocto:yocto /home/yocto/.gitconfig
+# make sure we can write to mounted volumes where root ownership/permission is
+# fixed. (before we switch user)
+RUN chmod a+s /usr/bin/chmod && \
+    chmod a+s /usr/bin/chown
 
 USER yocto
