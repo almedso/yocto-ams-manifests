@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Clarify which is the release upstream repositories refer to -->
+  <default revision="langdale" sync-j="4"/>
+
+  <!-- Remote references to repositories - potentially more than needed -->
+  <remote name="ams" fetch="ssh://git@github.com/almedso"/>
+  <remote name="freescale" fetch="ssh://git@github.com/Freescale"/>
+
+  <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
+  <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
+  <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
+
+  <!-- remote name="nodejs" fetch="https://github.com/imyller"/ -->
+  <!-- remote name="qt5" fetch="https://github.com/meta-qt5"/ -->
+
+  <!-- remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/ -->
+
+  <!-- almedso opensource projects -->
+  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
+    <!-- copyfile dest="README.md" src="README.md"/ -->
+  </project>
+
+  <!-- Open source collaboration projects adapted by almedso for contribution -->
+
+
+  <!-- Open source collaboration projects -->
+
+  <!-- Yocto Core -->
+  <project name="poky" remote="yocto" revision="refs/tags/langdale-4.1.1" path="sources/poky"/>
+  <project name="meta-openembedded" remote="oe" revision="langdale" path="sources/meta-openembedded"/>
+
+  <!-- Hardware specific -->
+  <project name="meta-raspberrypi" remote="yocto" revision="langdale" path="sources/meta-raspberrypi"/>
+
+  <!-- project name="meta-freescale" remote="freescale" path="sources/meta-freescale"/-->
+  <!-- project name="meta-freescale-3rdparty" remote="freescale" path="sources/meta-freescale-3rdparty"/ -->
+  <!-- project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/ -->
+
+  <!-- Application specific -->
+  <!-- project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/ -->
+  <!-- project name="meta-browser" remote="os-systems" path="sources/meta-browser" / -->
+  <!-- project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" / -->
+  <!-- project name="meta-qt5" remote="qt5" path="sources/meta-qt5"/ -->
+
+
+</manifest>
