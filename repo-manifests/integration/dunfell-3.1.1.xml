@@ -5,16 +5,16 @@
   <default revision="dunfell" sync-j="4"/>
 
   <!-- Remote references to repositories - potentially more than needed -->
-  <remote name="ams" fetch="git://github.com/almedso"/>
-  <remote name="freescale" fetch="git://github.com/Freescale"/>
-  <remote name="oe" fetch="git://git.openembedded.org"/>
-  <remote name="os-systems" fetch="git://github.com/OSSystems"/>
-  <remote name="yocto" fetch="git://git.yoctoproject.org"/>
-  <remote name="rust" fetch="git://github.com/rust-embedded"/>
+  <remote name="ams" fetch="ssh://git@github.com/almedso"/>
+  <remote name="freescale" fetch="ssh://git@github.com/Freescale"/>
+
+  <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
+  <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
+  <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
+
+  <remote name="rust" fetch="ssh://:git@github.com/rust-embedded"/>
+
   <remote name="qt5" fetch="https://code.qt.io/yocto"/>
-  <remote name="ssh.phytec" fetch="ssh://git@stash.phytec.com/dev"/>
-  <remote name="jupyter" fetch="git://github.com/Xilinx"/>
-  <remote name="scipy" fetch="git://github.com/gpanders"/>
 
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
