@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Clarify which is the release upstream repositories refer to -->
+  <default revision="kirkstone" sync-j="4"/>
+
+  <!-- Remote references to repositories - potentially more than needed -->
+  <remote name="ams" fetch="ssh://git@github.com/almedso"/>
+  <remote name="freescale" fetch="ssh://git@github.com/Freescale"/>
+  <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
+  <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
+  <remote name="digi" fetch="ssh://git@github.com/digi-embedded"/>
+  <remote name="yocto" fetch="https://git.yoctoproject.org"/>
+  <remote name="git.phytec" fetch="git://git.phytec.de" />
+  <remote name="ssh.phytec" fetch="ssh://git@git.phytec.de" />
+
+  <remote fetch="https://github.com/rauc" name="rauc"/>
+  <remote fetch="https://github.com/meta-rust" name="rust"/>
+
+  <!-- almedso opensource projects -->
+  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
+	  <copyfile dest="README.md" src="README.md"/>
+	  <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="ams-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="phyimx8-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="stm32m-init-build-env" src="scripts/ams-init-build-env"/>
+  </project>
+
+
+  <!-- Yocto Core -->
+  <project name="poky" remote="yocto" revision="kirkstone" path="sources/poky"/>
+  <project name="meta-openembedded" remote="oe" revision="kirkstone" path="sources/meta-openembedded"/>
+
+  <!-- Hardware specific -->
+  <project name="meta-raspberrypi" remote="yocto" revision="kirkstone" path="sources/meta-raspberrypi"/>
+  <project name="meta-freescale" remote="yocto" path="sources/meta-freescale"/>
+  <project name="meta-freescale-3rdparty" remote="freescale" path="sources/meta-freescale-3rdparty"/>
+  <project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/>
+  <project name="meta-digi" remote="digi" path="sources/digi"/>
+  <project name="meta-phytec" path="sources/meta-phytec" remote="git.phytec" revision="kirkstone"/>
+  <!-- Middleware -->
+  <project name="meta-rauc" path="sources/meta-rauc" remote="rauc" revision="kirkstone"/>
+  <project name="meta-rust" path="sources/meta-rust" remote="rust" revision="fix-kirkstone"/>
+
+  <!-- Application specific -->
+  <!-- project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/ -->
+
+</manifest>
+
