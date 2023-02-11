@@ -2,7 +2,7 @@
 <manifest>
 
   <!-- Clarify which is the release upstream repositories refer to -->
-  <default revision="kirkstone" sync-j="4"/>
+  <default revision="hardknott" sync-j="4"/>
 
   <!-- Remote references to repositories - potentially more than needed -->
   <remote name="ams" fetch="ssh://git@github.com/almedso"/>
@@ -19,24 +19,28 @@
 
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
-    <copyfile dest="README.md" src="README.md"/>
+	  <copyfile dest="README.md" src="README.md"/>
+	  <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="ams-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="phyimx8-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="stm32m-init-build-env" src="scripts/ams-init-build-env"/>
   </project>
 
 
   <!-- Yocto Core -->
-  <project name="poky" remote="yocto" revision="kirkstone" path="sources/poky"/>
-  <project name="meta-openembedded" remote="oe" revision="kirkstone" path="sources/meta-openembedded"/>
+  <project name="poky" remote="yocto" revision="hardknott" path="sources/poky"/>
+  <project name="meta-openembedded" remote="oe" revision="hardknott" path="sources/meta-openembedded"/>
 
   <!-- Hardware specific -->
-  <project name="meta-raspberrypi" remote="yocto" revision="kirkstone" path="sources/meta-raspberrypi"/>
+  <project name="meta-raspberrypi" remote="yocto" revision="hardknott" path="sources/meta-raspberrypi"/>
   <project name="meta-freescale" remote="yocto" path="sources/meta-freescale"/>
   <project name="meta-freescale-3rdparty" remote="freescale" path="sources/meta-freescale-3rdparty"/>
   <project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/>
-  <project name="meta-digi" remote="digi" path="sources/digi"/>
-  <project name="meta-phytec" path="sources/meta-phytec" remote="git.phytec" revision="kirkstone"/>
+  <project name="meta-phytec" path="sources/meta-phytec" remote="git.phytec" revision="hardknott"/>
+
   <!-- Middleware -->
-  <project name="meta-rauc" path="sources/meta-rauc" remote="rauc" revision="kirkstone"/>
-  <project name="meta-rust" path="sources/meta-rust" remote="rust" revision="fix-kirkstone"/>
+  <project name="meta-rauc" path="sources/meta-rauc" remote="rauc" revision="hardknott"/>
+  <project name="meta-rust" path="sources/meta-rust" remote="rust" revision="fix-hardknott"/>
 
   <!-- Application specific -->
   <!-- project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/ -->
