@@ -14,22 +14,19 @@
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
     <copyfile dest="README.md" src="README.md"/>
-	<linkfile dest="stm-init-build-env" src="scripts/ams-init-build-env"/>
+	<linkfile dest="stm32m1-init-build-env" src="scripts/ams-init-build-env"/>
   </project>
 
   <!-- Yocto Core -->
   <project name="poky" remote="yocto" path="sources/poky"/>
   <project name="meta-openembedded" remote="oe" path="sources/meta-openembedded"/>
-  <!-- Poky is a superset of openembedded-core and bitbake that makes sence if you base your distro on poky -->
-  <project name="bitbake" path="sources/bitbake" remote="oe" revision="2.0"/>
+  <!-- Poky is a superset of openembedded core that makes sence if you base your distro on poky -->
   <project name="openembedded-core" path="sources/openembedded-core" remote="oe" />
+  <project name="bitbake" path="sources/openembedded-core/bitbake" remote="oe" />
 
-  <!-- Hardware specific -->
-  <project name="meta-st-openstlinux" remote="OpenSTLinux" path="sources/meta-st/meta-st-openstlinux" />
-  <project name="meta-st-stm32mp" remote="OpenSTLinux" path="sources/meta-st/meta-st-stm32mp" />
-  <project name="meta-st-stm32mp-addons" remote="OpenSTLinux" path="sources/meta-st/meta-st-stm32mp-addons" />
-  <project name="meta-st-scripts" remote="OpenSTLinux" path="sources/meta-st/scripts" />
-
-  <!-- Middleware -->
-  <project name="meta-qt5/meta-qt5" path="sources/meta-qt5" remote="github" />
+  <project name="meta-qt5/meta-qt5" path="sources/meta-qt5" remote="github" revision="5b71df60e523423b9df6793de9387f87a149ac42"/>
+  <project name="meta-st-openstlinux" path="sources/meta-st/meta-st-openstlinux" revision="cb736b403d0fef2a02390695613b6b4bb13ca1b7"/>
+  <project name="meta-st-stm32mp" path="sources/meta-st/meta-st-stm32mp" revision="ca501bd7dbe023682903ceedddaacd940b0898f4"/>
+  <project name="meta-st-stm32mp-addons" path="sources/meta-st/meta-st-stm32mp-addons" revision="f1a18b73343afd8dd5f9aa7f5b605d139fb9e4a8"/>
+  <project name="meta-st-scripts" path="sources/meta-st/scripts" revision="bc063e7af04d04aff66401eb73610381bebc49a0"/>
 </manifest>
