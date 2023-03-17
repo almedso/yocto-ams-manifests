@@ -20,8 +20,10 @@
   <!-- Yocto Core -->
   <project name="poky" remote="yocto" path="sources/poky"/>
   <project name="meta-openembedded" remote="oe" path="sources/meta-openembedded"/>
-  <!-- Poky is a superset of openembedded core that makes sence if you base your distro on poky -->
-  <project name="openembedded-core" path="sources/openembedded-core" remote="oe" />
+	  <!-- Poky is a superset of openembedded core that makes sence if you base your distro on poky -->
+	  <!-- go with a fixed sha-1 within the kirkstone branch that refers to gstreamer*20.3 instated of *20.5
+	       to please bbappends in meta-st-openstlinux -->
+  <project name="openembedded-core" path="sources/openembedded-core" remote="oe" revision="f7766da462905ec67bf549d46b8017be36cd5b2a"/>
   <project name="bitbake" path="sources/openembedded-core/bitbake" remote="oe" revision="2.0" />
 
   <!-- BSP specific layers -->
