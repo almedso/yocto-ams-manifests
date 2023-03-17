@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest>
+	<!-- manifest file to build riot board
+		copied from https://github.com/embest-tech/fsl-arm-yocto-bsp/blob/embest_imx-3.10.17-1.0.0_ga/default.xml
+		docu at: https://community.element14.com/products/devtools/single-board-computers/riotboard/b/blog/posts/riotboard-yocto-part1-environment-setup-and-initial-build
+	-->
+    <default sync-j="2" />
+	<remote fetch="git://git.yoctoproject.org" name="yocto" />
+    <remote fetch="git://github.com/Freescale" name="freescale" />
+	<remote fetch="git://git.openembedded.org" name="oe" />
+	<remote fetch="git://git.freescale.com/imx" name="fsl-release" />
+	<remote fetch="git://github.com/OSSystems" name="OSSystems"/>
+	<remote name="embest-tech-github"
+	fetch="git://github.com/embest-tech/" />
+
+	<project remote="embest-tech-github" revision="embest_dora" name="poky" path="sources/poky"/>
+	<project remote="yocto" revision="af392c22bf6b563525ede4a81b6755ff1dd2c1c6" name="meta-fsl-arm" path="sources/meta-fsl-arm"/>
+
+	<project remote="oe" revision="eb4563b83be0a57ede4269ab19688af6baa62cd2" name="meta-openembedded" path="sources/meta-openembedded"/>
+
+	<project remote="freescale" revision="6bc2400f3045e27dc1a4a65cb28bfb0e32403bb7" name="fsl-community-bsp-base" path="sources/base">
+	  <copyfile dest="README" src="README"/>
+	  <copyfile dest="setup-environment" src="setup-environment"/>
+	</project>
+
+	<project remote="embest-tech-github" revision="embest_dora" name="meta-fsl-arm-extra" path="sources/meta-fsl-arm-extra"/>
+	<project remote="freescale" revision="5a12677ad000a926d23c444266722a778ea228a7" name="meta-fsl-demos" path="sources/meta-fsl-demos"/>
+
+	<project remote="OSSystems" revision="fc3969f63bda343c38c40a23f746c560c4735f3e" name="meta-browser" path="sources/meta-browser" />
+
+	<project remote="embest-tech-github" name="meta-fsl-bsp-release" path="sources/meta-fsl-bsp-release" revision="embest_dora_3.10.17-1.0.0_GA">
+	  <copyfile src="imx/tools/fsl-setup-release.sh" dest="fsl-setup-release.sh" />
+    </project>
+</manifest>
