@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
+	<remote name="community" fetch="https://github.com/Freescale"/>
+	<remote name="oe" fetch="ssh://git@github.com/openembedded"/>
+	<remote name="CAF" fetch="https://source.codeaurora.org/external/imx"/>
+	<remote name="OSSystems" fetch="https://github.com/OSSystems"/>
+	<remote name="QT5" fetch="https://github.com/meta-qt5"/>
+	<remote name="clang" fetch="https://github.com/kraj"/>
+	<remote name="imx-support" fetch="https://source.codeaurora.org/external/imxsupport"/>
+	<remote name="python2" fetch="https://git.openembedded.org"/>
+	<remote name="rauc" fetch="https://github.com/rauc"/>
+	<remote name="git.phytec" fetch="git://git.phytec.de"/>
+	<remote name="ssh.phytec" fetch="ssh://git@git.phytec.de"/>
+
+	<default revision="kirkstone" remote="git.phytec" sync-j="2"/>
+
+	<project name="poky" path="sources/poky" remote="yocto" upstream="kirkstone">
+		<ignorebaselayer/>
+		<sublayer path="meta"/>
+		<sublayer path="meta-poky"/>
+	</project>
+	<project name="meta-openembedded" path="sources/meta-openembedded" remote="oe">
+		<ignorebaselayer/>
+		<sublayer path="meta-oe"/>
+		<sublayer path="meta-networking"/>
+		<sublayer path="meta-python"/>
+		<sublayer path="meta-multimedia"/>
+		<sublayer path="meta-filesystems"/>
+		<sublayer path="meta-perl"/>
+		<sublayer path="meta-gnome"/>
+	</project>
+	<project name="meta-imx" path="sources/meta-imx" remote="CAF" revision="kirkstone" >
+		<ignorebaselayer/>
+		<sublayer path="meta-bsp"/>
+		<sublayer path="meta-sdk"/>
+		<sublayer path="meta-ml"/>
+	</project>
+	<project name="meta-clang" path="sources/meta-clang" remote="clang" />
+	<project name="meta-freescale" path="sources/meta-freescale" remote="community" />
+	<project name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty" remote="community" />
+	<project name="meta-freescale-distro" path="sources/meta-freescale-distro" remote="community" />
+	<project name="meta-nxp-demo-experience" path="sources/meta-nxp-demo-experience" remote="imx-support" />
+	<project name="meta-python2" path="sources/meta-python2" remote="python2" />
+	<project name="meta-qt5" path="sources/meta-qt5" remote="QT5" />
+	<project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto" />
+	<project name="meta-rauc" path="sources/meta-rauc" remote="rauc"/>
+	<project name="meta-phytec" path="sources/meta-phytec">
+		<copyfile dest="tools/init" src="scripts/init"/>
+	</project>
+	<project name="meta-ampliphy" path="sources/meta-ampliphy"/>
+	<project name="meta-security" path="sources/meta-security" remote="yocto">
+		<sublayer path="meta-tpm"/>
+	</project>
+</manifest>
