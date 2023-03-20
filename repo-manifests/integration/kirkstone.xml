@@ -2,20 +2,22 @@
 <manifest>
 
   <!-- Clarify which is the release upstream repositories refer to -->
-  <default revision="hardknott" sync-j="4"/>
+  <default revision="kirkstone" sync-j="4"/>
 
   <!-- Remote references to repositories - potentially more than needed -->
   <remote name="ams" fetch="ssh://git@github.com/almedso"/>
   <remote name="freescale" fetch="ssh://git@github.com/Freescale"/>
+  <remote name="imx" fetch="ssh://git@github.com/nxp-imx"/>
   <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
   <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
   <remote name="digi" fetch="ssh://git@github.com/digi-embedded"/>
   <remote name="yocto" fetch="https://git.yoctoproject.org"/>
   <remote name="git.phytec" fetch="git://git.phytec.de" />
   <remote name="ssh.phytec" fetch="ssh://git@git.phytec.de" />
+  <remote name="github.phytec" fetch="ssh://git@github.com/phytec" />
 
-  <remote fetch="https://github.com/rauc" name="rauc"/>
-  <remote fetch="https://github.com/meta-rust" name="rust"/>
+  <remote fetch="ssh://git@github.com/rauc" name="rauc"/>
+  <remote fetch="ssh://git@github.com/meta-rust" name="rust"/>
 
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
@@ -28,22 +30,25 @@
 
 
   <!-- Yocto Core -->
-  <project name="poky" remote="yocto" revision="hardknott" path="sources/poky"/>
-  <project name="meta-openembedded" remote="oe" revision="hardknott" path="sources/meta-openembedded"/>
+  <project name="poky" remote="yocto" path="sources/poky"/>
+  <project name="meta-openembedded" remote="oe" path="sources/meta-openembedded"/>
 
   <!-- Hardware specific -->
-  <project name="meta-raspberrypi" remote="yocto" revision="hardknott" path="sources/meta-raspberrypi"/>
+  <project name="meta-raspberrypi" remote="yocto" path="sources/meta-raspberrypi"/>
+
   <project name="meta-freescale" remote="yocto" path="sources/meta-freescale"/>
   <project name="meta-freescale-3rdparty" remote="freescale" path="sources/meta-freescale-3rdparty"/>
   <project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/>
-  <project name="meta-phytec" path="sources/meta-phytec" remote="git.phytec" revision="hardknott"/>
+  <project name="meta-phytec" path="sources/meta-phytec" remote="github.phytec" />
 
+  <project name="meta-imx" path="sources/meta-imx" remote="imx" revision="kirkstone-5.15.71-2.2.0" upstream="kirkstone"  >
+		<ignorebaselayer/>
+		<sublayer path="meta-bsp"/>
+		<sublayer path="meta-sdk"/>
+		<sublayer path="meta-ml"/>
+  </project>
   <!-- Middleware -->
-  <project name="meta-rauc" path="sources/meta-rauc" remote="rauc" revision="hardknott"/>
-  <project name="meta-rust" path="sources/meta-rust" remote="rust" revision="fix-hardknott"/>
-
-  <!-- Application specific -->
-  <!-- project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/ -->
+  <project name="meta-rust" path="sources/meta-rust" remote="rust" revision="fix-kirkstone" upstream="kirkstone" />
 
 </manifest>
 
