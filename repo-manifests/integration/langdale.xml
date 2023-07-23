@@ -28,7 +28,7 @@
   <!-- Open source collaboration projects -->
 
   <!-- Yocto Core -->
-  <project name="poky" remote="yocto" revision="refs/tags/langdale-4.1.1" path="sources/poky"/>
+  <project name="poky" remote="yocto" revision="refs/tags/langdale-4.1.3" path="sources/poky"/>
   <project name="meta-openembedded" remote="oe" revision="langdale" path="sources/meta-openembedded"/>
 
   <!-- Hardware specific -->
