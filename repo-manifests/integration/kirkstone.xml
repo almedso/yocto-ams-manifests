@@ -11,6 +11,7 @@
   <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
   <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
   <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
+  <remote name="rust" fetch="ssh://git@github.com/meta-rust"/>
 
   <!-- remote name="nodejs" fetch="https://github.com/imyller"/ -->
   <!-- remote name="qt5" fetch="https://github.com/meta-qt5"/ -->
@@ -39,6 +40,8 @@
   <!-- project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/ -->
 
   <!-- Application specific -->
+  <!-- we need the master revision to get a newer stable rust compiler. 1.59 from oe is too old -->
+  <project name="meta-rust" remote="rust" path="sources/meta-rust" revision="master" />
   <!-- project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/ -->
   <!-- project name="meta-browser" remote="os-systems" path="sources/meta-browser" / -->
   <!-- project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" / -->
