@@ -12,6 +12,9 @@
   <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
   <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
   <remote name="rust" fetch="ssh://git@github.com/meta-rust"/>
+  <remote name="clang" fetch="ssh://git@github.com/kraj"/>
+  <remote name="influx" fetch="ssh://git@github.com/alihanyalcin"/>
+  <remote name="jupyter" fetch="ssh://git@github.com/Xilinx"/>
 
   <!-- remote name="nodejs" fetch="https://github.com/imyller"/ -->
   <!-- remote name="qt5" fetch="https://github.com/meta-qt5"/ -->
@@ -20,7 +23,14 @@
 
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
-    <!-- copyfile dest="README.md" src="README.md"/ -->
+	  <copyfile dest="README.md" src="README.md"/>
+	  <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="ams-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="phyimx8-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="stm32m-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="timeseries-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="jupyter-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="browser-init-build-env" src="scripts/ams-init-build-env"/>
   </project>
 
   <!-- Open source collaboration projects adapted by almedso for contribution -->
@@ -42,10 +52,13 @@
   <!-- Application specific -->
   <!-- we need the master revision to get a newer stable rust compiler. 1.59 from oe is too old -->
   <project name="meta-rust" remote="rust" path="sources/meta-rust" revision="master" />
-  <!-- project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/ -->
-  <!-- project name="meta-browser" remote="os-systems" path="sources/meta-browser" / -->
+  <project name="meta-influx" remote="influx" path="sources/meta-influx" revision="master" />
+  <project name="meta-jupyter" remote="jupyter" path="sources/meta-jupyter" revision="master" />
+  <project name="meta-browser" remote="os-systems" path="sources/meta-browser" revision="master" />
+  <project name="meta-clang" remote="clang" path="sources/meta-clang" />
   <!-- project name="meta-nodejs" remote="nodejs" path="sources/meta-nodejs" / -->
   <!-- project name="meta-qt5" remote="qt5" path="sources/meta-qt5"/ -->
+  <!-- project name="meta-virtualization" remote="yocto" path="sources/meta-virtualization"/ -->
 
 
 </manifest>
