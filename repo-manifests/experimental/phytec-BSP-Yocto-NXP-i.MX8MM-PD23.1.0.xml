@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<manifest>
+	<phytec pdn="PD23.1.0" release_uid="BSP-Yocto-NXP-i.MX8MM-PD23.1.0" soc="iMX8MM" supported_builds="
+    phyboard-polis-imx8mm-4/phytec-headless-image/ampliphy-vendor,
+    phyboard-polis-imx8mm-5/-c populate_sdk phytec-qt6demo-image/ampliphy-vendor-xwayland,
+    phyboard-polis-imx8mm-5/phytec-headless-bundle/ampliphy-vendor-rauc,
+    phyboard-polis-imx8mm-5/phytec-headless-image/ampliphy-vendor,
+    phyboard-polis-imx8mm-5/phytec-headless-image/ampliphy-vendor-rauc,
+    phyboard-polis-imx8mm-5/phytec-provisioning-image/ampliphy-vendor-provisioning,
+    phyboard-polis-imx8mm-5/phytec-qt6demo-image/ampliphy-vendor-xwayland,
+    phyboard-polis-imx8mm-5/phytec-security-bundle/ampliphy-vendor-secure,
+    phyboard-polis-imx8mm-5/phytec-security-image/ampliphy-vendor-secure,
+    phyboard-polis-imx8mm-5/phytec-vision-image/ampliphy-vendor-xwayland,
+    phyboard-polis-imx8mn-2/phytec-headless-image/ampliphy-vendor,
+    phygate-tauri-l-imx8mm-2/phytec-headless-image/ampliphy-vendor,
+    phygate-tauri-l-imx8mm-2/phytec-provisioning-image/ampliphy-vendor-provisioning,
+    phygate-tauri-l-imx8mm-2/phytec-security-bundle/ampliphy-vendor-secure,
+    phygate-tauri-l-imx8mm-2/phytec-security-image/ampliphy-vendor-secure
+  " bspextension="NXP" build_container="phybuilder/yocto-ubuntu-20.04:phy2" />
+
+  <remote name="yocto" fetch="https://git.yoctoproject.org/git" />
+	<remote name="community" fetch="https://github.com/Freescale" />
+	<remote name="oe" fetch="https://github.com/openembedded" />
+	<remote name="nxp-imx" fetch="https://github.com/nxp-imx" />
+	<remote name="OSSystems" fetch="https://github.com/OSSystems" />
+	<remote name="QT6" fetch="https://code.qt.io/yocto" />
+	<remote name="clang" fetch="https://github.com/kraj" />
+	<remote name="imx-support" fetch="https://github.com/nxp-imx-support" />
+	<remote name="rauc" fetch="https://github.com/rauc" />
+	<remote name="git.phytec" fetch="git://git.phytec.de" />
+	<remote name="ssh.phytec" fetch="ssh://git@git.phytec.de" />
+
+	<default revision="kirkstone" remote="git.phytec" sync-j="2" />
+
+	<project name="poky" path="sources/poky" remote="yocto" upstream="kirkstone" revision="b1ddd4178d469cf0c14e8c31d0fd2ba1b53bf293">
+		<ignorebaselayer />
+		<sublayer path="meta" />
+		<sublayer path="meta-poky" />
+	</project>
+	<project name="meta-openembedded" path="sources/meta-openembedded" remote="oe" upstream="kirkstone" revision="79a6f60dabad9e5b0e041efa91379447ef030482">
+		<ignorebaselayer />
+		<sublayer path="meta-oe" />
+		<sublayer path="meta-networking" />
+		<sublayer path="meta-python" />
+		<sublayer path="meta-multimedia" />
+		<sublayer path="meta-filesystems" />
+		<sublayer path="meta-perl" />
+		<sublayer path="meta-gnome" />
+	</project>
+	<project name="meta-browser" path="sources/meta-browser" remote="OSSystems" revision="e232c2e21b96dc092d9af8bea4b3a528e7a46dd6">
+		<ignorebaselayer />
+		<sublayer path="meta-chromium" />
+	</project>
+	<project name="meta-clang" path="sources/meta-clang" remote="clang" revision="c728c3f9168c8a4ed05163a51dd48ca1ad8ac21d" upstream="kirkstone" />
+	<project name="meta-imx" path="sources/meta-imx" remote="nxp-imx" revision="ca68ab5d25322b51f54564275c84ab8de3c74ea6" upstream="kirkstone-5.15.71-2.2.2">
+		<linkfile src="tools/imx-setup-release.sh" dest="imx-setup-release.sh" />
+		<linkfile src="README" dest="README-IMXBSP" />
+		<ignorebaselayer />
+		<sublayer path="meta-bsp" />
+		<sublayer path="meta-sdk" />
+		<sublayer path="meta-ml" />
+	</project>
+	<project name="meta-freescale" path="sources/meta-freescale" remote="community" revision="c82d4634e7aba8bc0de73ce1dfc997b630051571" upstream="kirkstone" />
+	<project name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty" remote="community" revision="5977197340c7a7db17fe3e02a4e014ad997565ae" upstream="kirkstone" />
+	<project name="meta-freescale-distro" path="sources/meta-freescale-distro" remote="community" revision="d5bbb487b2816dfc74984a78b67f7361ce404253" upstream="kirkstone" />
+	<project name="meta-nxp-demo-experience" path="sources/meta-nxp-demo-experience" remote="imx-support" revision="refs/tags/rel_imx_5.15.71_2.2.0" upstream="kirkstone" />
+	<project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto" revision="9482648daf0bb42ff3475e7892542cf99f3b8d48" />
+	<project name="meta-rauc" path="sources/meta-rauc" remote="rauc" revision="804386f04826ea7fe74a1b4e0a20991425c06d9c" />
+	<project name="meta-qt6" path="sources/meta-qt6" remote="QT6" revision="ed785a25d12e365d1054700d4fc94a053176eb14" upstream="6.3" />
+	<project name="meta-phytec" path="sources/meta-phytec" revision="refs/tags/BSP-Yocto-NXP-i.MX8MM-PD23.1.0">
+		<copyfile dest="tools/init" src="scripts/init" />
+	</project>
+	<project name="meta-ampliphy" path="sources/meta-ampliphy" revision="refs/tags/BSP-Yocto-NXP-i.MX8MM-PD23.1.0" />
+	<project name="meta-qt6-phytec" path="sources/meta-qt6-phytec" revision="1b17f8993df6b18e9b2b380cc3959937e61ccdc9" />
+	<project name="meta-security" path="sources/meta-security" remote="yocto" revision="1a3e42cedbd94ca73be45800d0e902fec35d0f0f">
+		<sublayer path="meta-tpm" />
+	</project>
+	<project name="meta-arm" path="sources/meta-arm" remote="yocto" revision="refs/tags/yocto-4.0.3">
+		<ignorebaselayer />
+		<sublayer path="meta-arm" />
+		<sublayer path="meta-arm-toolchain" />
+	</project>
+</manifest>
