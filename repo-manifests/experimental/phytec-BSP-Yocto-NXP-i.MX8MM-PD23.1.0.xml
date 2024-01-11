@@ -18,6 +18,8 @@
     phygate-tauri-l-imx8mm-2/phytec-security-image/ampliphy-vendor-secure
   " bspextension="NXP" build_container="phybuilder/yocto-ubuntu-20.04:phy2" />
 
+  <remote name="ams" fetch="ssh://git@github.com/almedso"/>
+
   <remote name="yocto" fetch="https://git.yoctoproject.org/git" />
 	<remote name="community" fetch="https://github.com/Freescale" />
 	<remote name="oe" fetch="https://github.com/openembedded" />
@@ -31,6 +33,13 @@
 	<remote name="ssh.phytec" fetch="ssh://git@git.phytec.de" />
 
 	<default revision="kirkstone" remote="git.phytec" sync-j="2" />
+
+  <!-- almedso opensource projects -->
+  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
+	  <copyfile dest="README.md" src="README.md"/>
+	  <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="phyimx8-not-integrated-init-build-env" src="scripts/ams-init-build-env"/>
+  </project>
 
 	<project name="poky" path="sources/poky" remote="yocto" upstream="kirkstone" revision="b1ddd4178d469cf0c14e8c31d0fd2ba1b53bf293">
 		<ignorebaselayer />
