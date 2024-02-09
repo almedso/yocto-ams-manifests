@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
-	<remote name="community" fetch="https://github.com/Freescale"/>
-	<remote name="oe" fetch="ssh://git@github.com/openembedded"/>
-	<remote name="CAF" fetch="https://source.codeaurora.org/external/imx"/>
-	<remote name="OSSystems" fetch="https://github.com/OSSystems"/>
-	<remote name="QT5" fetch="https://github.com/meta-qt5"/>
-	<remote name="clang" fetch="https://github.com/kraj"/>
-	<remote name="imx-support" fetch="https://source.codeaurora.org/external/imxsupport"/>
-	<remote name="python2" fetch="https://git.openembedded.org"/>
-	<remote name="rauc" fetch="https://github.com/rauc"/>
-	<remote name="git.phytec" fetch="git://git.phytec.de"/>
-	<remote name="ssh.phytec" fetch="ssh://git@git.phytec.de"/>
+  <remote name="ams" fetch="ssh://git@github.com/almedso"/>
+
+  <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
+  <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
+  <remote name="rust" fetch="ssh://git@github.com/meta-rust"/>
+  <remote name="clang" fetch="ssh://git@github.com/kraj"/>
+  <remote name="yocto" fetch="https://git.yoctoproject.org/git" />
+	<remote name="community" fetch="https://github.com/Freescale" />
+	<remote name="nxp-imx" fetch="https://github.com/nxp-imx" />
+	<remote name="imx-support" fetch="https://github.com/nxp-imx-support" />
+	<remote name="git.phytec" fetch="git://git.phytec.de" />
+	<remote name="ssh.phytec" fetch="ssh://git@git.phytec.de" />
 
 	<default revision="kirkstone" remote="git.phytec" sync-j="2"/>
+
+  <!-- almedso opensource projects -->
+  <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
+	  <copyfile dest="README.md" src="README.md"/>
+	  <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="phyimx8-not-integrated-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="phyimx8-init-build-env" src="scripts/ams-init-build-env"/>
+  </project>
 
 	<project name="poky" path="sources/poky" remote="yocto" upstream="kirkstone">
 		<ignorebaselayer/>
@@ -28,28 +36,20 @@
 		<sublayer path="meta-multimedia"/>
 		<sublayer path="meta-filesystems"/>
 		<sublayer path="meta-perl"/>
-		<sublayer path="meta-gnome"/>
 	</project>
-	<project name="meta-imx" path="sources/meta-imx" remote="CAF" revision="kirkstone" >
+	<project name="meta-imx" path="sources/meta-imx" remote="nxp-imx" revision="ca68ab5d25322b51f54564275c84ab8de3c74ea6" upstream="kirkstone-5.15.71-2.2.2">
 		<ignorebaselayer/>
 		<sublayer path="meta-bsp"/>
 		<sublayer path="meta-sdk"/>
 		<sublayer path="meta-ml"/>
 	</project>
-	<project name="meta-clang" path="sources/meta-clang" remote="clang" />
 	<project name="meta-freescale" path="sources/meta-freescale" remote="community" />
 	<project name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty" remote="community" />
 	<project name="meta-freescale-distro" path="sources/meta-freescale-distro" remote="community" />
-	<project name="meta-nxp-demo-experience" path="sources/meta-nxp-demo-experience" remote="imx-support" />
-	<project name="meta-python2" path="sources/meta-python2" remote="python2" />
-	<project name="meta-qt5" path="sources/meta-qt5" remote="QT5" />
-	<project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto" />
-	<project name="meta-rauc" path="sources/meta-rauc" remote="rauc"/>
-	<project name="meta-phytec" path="sources/meta-phytec">
-		<copyfile dest="tools/init" src="scripts/init"/>
-	</project>
-	<project name="meta-ampliphy" path="sources/meta-ampliphy"/>
-	<project name="meta-security" path="sources/meta-security" remote="yocto">
-		<sublayer path="meta-tpm"/>
+	<project name="meta-phytec" path="sources/meta-phytec" revision="refs/tags/BSP-Yocto-NXP-i.MX8MM-PD23.1.0"/>
+	<project name="meta-arm" path="sources/meta-arm" remote="yocto" revision="refs/tags/yocto-4.0.3">
+		<ignorebaselayer />
+		<sublayer path="meta-arm" />
+		<sublayer path="meta-arm-toolchain" />
 	</project>
 </manifest>
