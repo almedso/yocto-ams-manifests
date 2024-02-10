@@ -6,7 +6,7 @@
   <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
   <remote name="rust" fetch="ssh://git@github.com/meta-rust"/>
   <remote name="clang" fetch="ssh://git@github.com/kraj"/>
-  <remote name="yocto" fetch="https://git.yoctoproject.org/git" />
+  <remote name="yocto" fetch="git://git.yoctoproject.org" />
 	<remote name="community" fetch="https://github.com/Freescale" />
 	<remote name="nxp-imx" fetch="https://github.com/nxp-imx" />
 	<remote name="imx-support" fetch="https://github.com/nxp-imx-support" />
