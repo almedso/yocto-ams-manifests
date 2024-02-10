@@ -6,15 +6,17 @@
 
   <!-- Remote references to repositories - potentially more than needed -->
   <remote name="ams" fetch="ssh://git@github.com/almedso"/>
-  <remote name="freescale" fetch="ssh://git@github.com/Freescale"/>
-
-  <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
-  <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
-  <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
-  <remote name="rust" fetch="ssh://git@github.com/meta-rust"/>
   <remote name="clang" fetch="ssh://git@github.com/kraj"/>
+  <remote name="freescale" fetch="ssh://git@github.com/Freescale"/>
   <remote name="influx" fetch="ssh://git@github.com/alihanyalcin"/>
   <remote name="jupyter" fetch="ssh://git@github.com/Xilinx"/>
+  <remote name="nxp-imx" fetch="ssh://git@github.com/nxp-imx" />
+  <remote name="oe" fetch="ssh://git@github.com/openembedded"/>
+  <remote name="open-stlinux" fetch="ssh://git@github.com/STMicroelectronics"/>
+  <remote name="os-systems" fetch="ssh://git@github.com/OSSystems"/>
+  <remote name="phytec" fetch="git://git.phytec.de" />
+  <remote name="rust" fetch="ssh://git@github.com/meta-rust"/>
+  <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
 
   <!-- remote name="nodejs" fetch="https://github.com/imyller"/ -->
   <!-- remote name="qt5" fetch="https://github.com/meta-qt5"/ -->
@@ -23,14 +25,12 @@
 
   <!-- almedso opensource projects -->
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
-	  <copyfile dest="README.md" src="README.md"/>
-	  <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="ams-init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="phyimx8-init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="stm32m-init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="timeseries-init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="jupyter-init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="browser-init-build-env" src="scripts/ams-init-build-env"/>
+    <copyfile dest="README.md" src="README.md"/>
+    <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
+    <linkfile dest="ams-init-build-env" src="scripts/ams-init-build-env"/>
+    <linkfile dest="timeseries-init-build-env" src="scripts/ams-init-build-env"/>
+    <linkfile dest="jupyter-init-build-env" src="scripts/ams-init-build-env"/>
+    <linkfile dest="browser-init-build-env" src="scripts/ams-init-build-env"/>
   </project>
 
   <!-- Open source collaboration projects adapted by almedso for contribution -->
@@ -43,11 +43,26 @@
   <project name="meta-openembedded" remote="oe" path="sources/meta-openembedded"/>
 
   <!-- Hardware specific -->
+  <project name="meta-arm" path="sources/meta-arm" remote="yocto" revision="refs/tags/yocto-4.0.3">
+    <ignorebaselayer />
+    <sublayer path="meta-arm" />
+    <sublayer path="meta-arm-toolchain" />
+  </project>
+  <project name="meta-freescale" remote="freescale" path="sources/meta-freescale"/>
+  <project name="meta-freescale-3rdparty" remote="freescale" path="sources/meta-freescale-3rdparty"/>
+  <project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/>
+  <project name="meta-imx" path="sources/meta-imx" remote="nxp-imx" revision="ca68ab5d25322b51f54564275c84ab8de3c74ea6" upstream="kirkstone-5.15.71-2.2.2">
+    <ignorebaselayer/>
+    <sublayer path="meta-bsp"/>
+    <sublayer path="meta-sdk"/>
+    <sublayer path="meta-ml"/>
+  </project>
+  <project name="meta-phytec" path="sources/meta-phytec" remote="phytec" revision="refs/tags/BSP-Yocto-NXP-i.MX8MM-PD23.1.0"/>
   <project name="meta-raspberrypi" remote="yocto" path="sources/meta-raspberrypi"/>
-
-  <!-- project name="meta-freescale" remote="freescale" path="sources/meta-freescale"/-->
-  <!-- project name="meta-freescale-3rdparty" remote="freescale" path="sources/meta-freescale-3rdparty"/ -->
-  <!-- project name="meta-freescale-distro" remote="freescale" path="sources/meta-freescale-distro"/ -->
+  <project name="meta-st-openstlinux" path="sources/meta-st/meta-st-openstlinux" remote="open-stlinux" revision="03daeb62ccffa2e29c20ee97154dc18dda4fbd60"/>
+  <project name="meta-st-stm32mp" path="sources/meta-st/meta-st-stm32mp" remote="open-stlinux" revision="ef4a6a785d17b4370cd20402b351a17ed34cd74d"/>
+  <project name="meta-st-stm32mp-addons" path="sources/meta-st/meta-st-stm32mp-addons" remote="open-stlinux" revision="f1a18b73343afd8dd5f9aa7f5b605d139fb9e4a8"/>
+  <project name="meta-st-scripts" path="sources/meta-st/scripts" remote="open-stlinux" revision="69e10d187debb1d4136af1c454b3dffd994c3de7"/>
 
   <!-- Application specific -->
   <!-- we need the master revision to get a newer stable rust compiler. 1.59 from oe is too old -->
