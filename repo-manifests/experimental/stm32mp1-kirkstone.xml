@@ -13,16 +13,16 @@
   <project name="yocto-ams" revision="master" path="sources/ams" remote="ams">
 	  <copyfile dest="README.md" src="README.md"/>
 	  <linkfile dest="init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="stm32m-init-build-env" src="scripts/ams-init-build-env"/>
-	  <linkfile dest="stm32m-not-integrated-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="stm32mp1-init-build-env" src="scripts/ams-init-build-env"/>
+	  <linkfile dest="stm32mp1-not-integrated-init-build-env" src="scripts/ams-init-build-env"/>
   </project>
 
-  <project name="bitbake" path="sources/openembedded-core/bitbake" remote="oe" />
-  <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe" "/>
-  <project name="meta-qt5/meta-qt5" path="sources/meta-qt5" remote="github" revision="bff5bd937f0776166e81a63f3dd39ede348ef758"/>
-  <project name="meta-st-openstlinux" path="sources/meta-st/meta-st-openstlinux" revision="03daeb62ccffa2e29c20ee97154dc18dda4fbd60"/>
-  <project name="meta-st-stm32mp" path="sources/meta-st/meta-st-stm32mp" revision="ef4a6a785d17b4370cd20402b351a17ed34cd74d"/>
-  <project name="meta-st-stm32mp-addons" path="sources/meta-st/meta-st-stm32mp-addons" revision="f1a18b73343afd8dd5f9aa7f5b605d139fb9e4a8"/>
-  <project name="meta-st-scripts" path="sources/meta-st/scripts" revision="69e10d187debb1d4136af1c454b3dffd994c3de7"/>
-  <project name="openembedded-core" path="sources/openembedded-core" remote="oe" "/>
+  <project name="bitbake" path="sources/openembedded-core/bitbake" remote="oe" revision="2.0" />
+  <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe" />
+  <project name="meta-qt5/meta-qt5" path="sources/meta-qt5" remote="github" />
+  <project name="meta-st-openstlinux" path="sources/meta-st/meta-st-openstlinux" />
+  <project name="meta-st-stm32mp" path="sources/meta-st/meta-st-stm32mp" />
+  <project name="meta-st-stm32mp-addons" path="sources/meta-st/meta-st-stm32mp-addons"  />
+  <project name="meta-st-scripts" path="sources/meta-st/scripts" />
+  <project name="openembedded-core" path="sources/openembedded-core" remote="oe" />
 </manifest>
