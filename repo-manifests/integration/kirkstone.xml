@@ -59,10 +59,11 @@
   </project>
   <project name="meta-phytec" path="sources/meta-phytec" remote="phytec" revision="refs/tags/BSP-Yocto-NXP-i.MX8MM-PD23.1.0"/>
   <project name="meta-raspberrypi" remote="yocto" path="sources/meta-raspberrypi"/>
-  <project name="meta-st-openstlinux" path="sources/meta-st/meta-st-openstlinux" remote="open-stlinux" revision="03daeb62ccffa2e29c20ee97154dc18dda4fbd60"/>
-  <project name="meta-st-stm32mp" path="sources/meta-st/meta-st-stm32mp" remote="open-stlinux" revision="ef4a6a785d17b4370cd20402b351a17ed34cd74d"/>
-  <project name="meta-st-stm32mp-addons" path="sources/meta-st/meta-st-stm32mp-addons" remote="open-stlinux" revision="f1a18b73343afd8dd5f9aa7f5b605d139fb9e4a8"/>
-  <project name="meta-st-scripts" path="sources/meta-st/scripts" remote="open-stlinux" revision="69e10d187debb1d4136af1c454b3dffd994c3de7"/>
+
+  <project name="meta-st-openstlinux" path="sources/meta-st/meta-st-openstlinux" remote="open-stlinux" />
+  <project name="meta-st-stm32mp" path="sources/meta-st/meta-st-stm32mp" remote="open-stlinux"/>
+  <project name="meta-st-stm32mp-addons" path="sources/meta-st/meta-st-stm32mp-addons" remote="open-stlinux"/>
+  <project name="meta-st-scripts" path="sources/meta-st/scripts" remote="open-stlinux" />
 
   <!-- Application specific -->
   <!-- we need the master revision to get a newer stable rust compiler. 1.59 from oe is too old -->
