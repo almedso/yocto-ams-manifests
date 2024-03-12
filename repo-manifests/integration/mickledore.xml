@@ -42,6 +42,11 @@
   <project name="poky" remote="yocto" path="sources/poky"/>
   <project name="meta-openembedded" remote="oe" path="sources/meta-openembedded"/>
 
+  <!-- Toolchain -->
+  <project name="meta-clang" remote="clang" path="sources/meta-clang" />
+  <!-- we need the master revision to get a newer stable rust compiler. 1.59 from oe is too old -->
+  <project name="meta-rust" remote="rust" path="sources/meta-rust" revision="master" />
+
   <!-- Hardware specific -->
   <!-- 
   <project name="meta-arm" path="sources/meta-arm" remote="yocto" revision="refs/tags/yocto-4.0.3">
@@ -62,8 +67,6 @@
   <project name="meta-raspberrypi" remote="yocto" path="sources/meta-raspberrypi"/>
 
   <!-- Application specific -->
-  <!-- we need the master revision to get a newer stable rust compiler. 1.59 from oe is too old -->
-  <project name="meta-rust" remote="rust" path="sources/meta-rust" revision="master" />
 
 
 </manifest>
