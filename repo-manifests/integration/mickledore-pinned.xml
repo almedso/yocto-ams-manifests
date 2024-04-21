@@ -21,6 +21,7 @@
   <remote name="sbabic"        fetch="ssh://git@github.com/sbabic"/>
   <remote name="timesys"       fetch="ssh://git@github.com/TimesysGit"/>
   <remote name="variscite"     fetch="ssh://git@github.com/varigit"/>
+  <remote name="webkit"        fetch="ssh://git@github.com/Igalia"/>
   <remote name="yocto"         fetch="https://git.yoctoproject.org/git"/>
   <!-- remote name="nodejs" fetch="https://github.com/imyller"/ -->
   <!-- remote name="qt5" fetch="https://github.com/meta-qt5"/ -->
@@ -41,13 +42,13 @@
 
   <!-- Open source collaboration projects -->
 
-  <project name="meta-swupdate"             path="sources/meta-swupdate"             remote="sbabic"       revision="ec42fbc54048060c500ca6fabe6616cb608b293a" upstream="mickledore"/>
-  <project name="meta-timesys"              path="sources/meta-timesys"              remote="timesys"      revision="a0c1f045016fd54406888f3750c1355188ffed63" upstream="master"/>
-  <project name="meta-virtualization"       path="sources/meta-virtualization"       remote="yocto"        revision="56593e277a377157944a6676e57497066b770a35" upstream="master"/>
+  <project name="meta-swupdate"             path="sources/meta-swupdate"             remote="sbabic"        revision="ec42fbc54048060c500ca6fabe6616cb608b293a" upstream="mickledore"/>
+  <project name="meta-timesys"              path="sources/meta-timesys"              remote="timesys"       revision="a0c1f045016fd54406888f3750c1355188ffed63" upstream="master"/>
+  <project name="meta-virtualization"       path="sources/meta-virtualization"       remote="yocto"         revision="56593e277a377157944a6676e57497066b770a35" upstream="master"/>
 
   <!-- Yocto Core -->
-  <project name="poky"                      path="sources/poky"                      remote="yocto"        revision="0a98281d37b0bd8dc1548c390216cb3978e36e0e" upstream="mickledore"/>
-  <project name="meta-openembedded"         path="sources/meta-openembedded"         remote="oe"           revision="75cf318cef3b4ee81fad2782cf063ecd69ba8842" upstream="mickledore"/>
+  <project name="poky"                      path="sources/poky"                      remote="yocto"         revision="0a98281d37b0bd8dc1548c390216cb3978e36e0e" upstream="mickledore"/>
+  <project name="meta-openembedded"         path="sources/meta-openembedded"         remote="oe"            revision="75cf318cef3b4ee81fad2782cf063ecd69ba8842" upstream="mickledore"/>
 
   <!-- Toolchain -->
   <project name="meta-clang"                path="sources/meta-clang"                remote="clang"         revision="af4dcba009ba98250315520f3003fde4ee164cce" upstream="mickledore"/>
@@ -56,30 +57,31 @@
   <project name="meta-rust-bin"             path="sources/meta-rust-bin"             remote="rust-embedded" revision="master" />
 
   <!-- Hardware specific -->
-  <project name="meta-arm"                  path="sources/meta-arm"                  remote="yocto"        revision="0e043288fd0b17fbf31cf00ae33045107a991144" upstream="master">
+  <project name="meta-arm"                  path="sources/meta-arm"                  remote="yocto"         revision="0e043288fd0b17fbf31cf00ae33045107a991144" upstream="master">
     <ignorebaselayer />
     <sublayer path="meta-arm" />
     <sublayer path="meta-arm-toolchain" />
   </project>
-  <project name="meta-freescale"            path="sources/meta-freescale"            remote="community"    revision="9b00d40b787c2b7105ce209f5635cc1a0cab81ca" upstream="master"/>
-  <project name="meta-freescale-3rdparty"   path="sources/meta-freescale-3rdparty"   remote="community"    revision="93ba05e3a16a028b770fa1e813b13eb87a59ac63" upstream="master"/>
-  <project name="meta-freescale-distro"     path="sources/meta-freescale-distro"     remote="community"    revision="b09c18a3f649f0cf1b40432bb39e76ba16fe94e2" upstream="master"/>
-  <project name="meta-imx"                  path="sources/meta-imx"                  remote="nxp-imx"      revision="refs/tags/rel_imx_6.1.36_2.1.0"           upstream="mickledore-6.1.36-2.1.0">
+  <project name="meta-freescale"            path="sources/meta-freescale"            remote="community"     revision="9b00d40b787c2b7105ce209f5635cc1a0cab81ca" upstream="master"/>
+  <project name="meta-freescale-3rdparty"   path="sources/meta-freescale-3rdparty"   remote="community"     revision="93ba05e3a16a028b770fa1e813b13eb87a59ac63" upstream="master"/>
+  <project name="meta-freescale-distro"     path="sources/meta-freescale-distro"     remote="community"     revision="b09c18a3f649f0cf1b40432bb39e76ba16fe94e2" upstream="master"/>
+  <project name="meta-imx"                  path="sources/meta-imx"                  remote="nxp-imx"       revision="refs/tags/rel_imx_6.1.36_2.1.0"           upstream="mickledore-6.1.36-2.1.0">
     <ignorebaselayer/>
     <sublayer path="meta-bsp"/>
     <sublayer path="meta-sdk"/>
     <sublayer path="meta-ml"/>
   </project>
-  <project name="meta-raspberrypi"          path="sources/meta-raspberrypi"          remote="yocto"        revision="9c81413d0b6f41f14f0f9c504d19e312c5b9958f" upstream="mickledore"/>
-  <project name="meta-variscite-bsp-common" path="sources/meta-variscite-bsp-common" remote="variscite"    revision="ffda6c84950fde890eaa53b00e8c3b53d1e1d99a" upstream="mickledore-var02"/>
-  <project name="meta-variscite-bsp-imx"    path="sources/meta-variscite-bsp-imx"    remote="variscite"    revision="7c9a2a00be89fa15679718a817c386c3f8e75dcf" upstream="mickledore-var02"/>
-  <project name="meta-variscite-hab"        path="sources/meta-variscite-hab"        remote="variscite"    revision="bb83d798b396d4913839d0965046529ee83b7733" upstream="mickledore-var02"/>
-  <project name="meta-variscite-sdk-common" path="sources/meta-variscite-sdk-common" remote="variscite"    revision="5dd4f0f7f8bbc255cec959ad19402881e229b197" upstream="mickledore-var02"/>
-  <project name="meta-variscite-sdk-imx"    path="sources/meta-variscite-sdk-imx"    remote="variscite"    revision="cf44a79cc6099f5d69b918c80b21f4d52fa7c391" upstream="mickledore-var02"/>
-  <project name="variscite-bsp-base"        path="sources/base"                      remote="variscite"    revision="bfcfca8054c9517436cf5cb77e04bcf2b28ccc19" upstream="mickledore-var01"/>
+  <project name="meta-raspberrypi"          path="sources/meta-raspberrypi"          remote="yocto"         revision="9c81413d0b6f41f14f0f9c504d19e312c5b9958f" upstream="mickledore"/>
+  <project name="meta-variscite-bsp-common" path="sources/meta-variscite-bsp-common" remote="variscite"     revision="ffda6c84950fde890eaa53b00e8c3b53d1e1d99a" upstream="mickledore-var02"/>
+  <project name="meta-variscite-bsp-imx"    path="sources/meta-variscite-bsp-imx"    remote="variscite"     revision="7c9a2a00be89fa15679718a817c386c3f8e75dcf" upstream="mickledore-var02"/>
+  <project name="meta-variscite-hab"        path="sources/meta-variscite-hab"        remote="variscite"     revision="bb83d798b396d4913839d0965046529ee83b7733" upstream="mickledore-var02"/>
+  <project name="meta-variscite-sdk-common" path="sources/meta-variscite-sdk-common" remote="variscite"     revision="5dd4f0f7f8bbc255cec959ad19402881e229b197" upstream="mickledore-var02"/>
+  <project name="meta-variscite-sdk-imx"    path="sources/meta-variscite-sdk-imx"    remote="variscite"     revision="cf44a79cc6099f5d69b918c80b21f4d52fa7c391" upstream="mickledore-var02"/>
+  <project name="variscite-bsp-base"        path="sources/base"                      remote="variscite"     revision="bfcfca8054c9517436cf5cb77e04bcf2b28ccc19" upstream="mickledore-var01"/>
 
   <!-- Application specific -->
-  <project name="meta-browser"              path="sources/meta-browser"              remote="ossystems"    revision="c76bc3a68356bf11daad4659b5a787cd7714b2a9" upstream="master"/>
-  <project name="meta-qt6"                  path="sources/meta-qt6"                  remote="qt"           revision="1406d0a85525a71fe5d7892d7f915404290a78ad" upstream="6.5.0"/>
+  <project name="meta-browser"              path="sources/meta-browser"              remote="ossystems"     revision="c76bc3a68356bf11daad4659b5a787cd7714b2a9" upstream="master"/>
+  <project name="meta-qt6"                  path="sources/meta-qt6"                  remote="qt"            revision="1406d0a85525a71fe5d7892d7f915404290a78ad" upstream="6.5.0"/>
+  <project name="meta-webkit"               path="sources/meta-webkit"               remote="webkit"        revision="master" />
 
 </manifest>
